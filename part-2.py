@@ -24,3 +24,14 @@ def is_palindrome(s):
 # digit_match
 
 
+def digit_match(apples,oranges,count = 0):
+    
+    if apples == 0 and oranges == 0:
+        return 1
+    if apples < 10 or oranges < 10:
+        if apples % 10 == oranges % 10:
+            count += 1
+        return count
+    if apples % 10 == oranges % 10:
+        count += 1
+    return digit_match(apples//10, oranges//10, count) 
