@@ -9,6 +9,7 @@ def search(array,query):
         return False
     elif array[0] == query:
         return True
+
     return search(array[1:],query)
 
 # is_palindrome
@@ -17,8 +18,8 @@ def is_palindrome(s):
         return True
     elif s[0] != s[-1]:
         return False
-    else:
-        return is_palindrome(s[1:-1]) 
+    
+    return is_palindrome(s[1:-1]) 
 
 
 # digit_match
@@ -34,4 +35,5 @@ def digit_match(apples,oranges,count = 0):
         return count
     if apples % 10 == oranges % 10:
         count += 1
+        
     return digit_match(apples//10, oranges//10, count) 
