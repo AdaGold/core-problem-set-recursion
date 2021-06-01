@@ -16,8 +16,9 @@ def factorial(n):
 
 # reverse
 def reverse(text):
-    text = text[::-1]
-    return text
+    if len(text) == 0:
+        return text
+    return reverse(text[1:]) + text[0]
 
 
 # bunny
