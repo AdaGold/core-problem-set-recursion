@@ -2,41 +2,52 @@
 
 
 # search 🔍
-def search(array, query):
-    if len(array) == 0:
+def search(unsorted_array, query):
+    if len(unsorted_array) == 0:
         return False
-    if array[-1] == query:
+
+    if unsorted_array[-1] == query:
         return True
-    return search(array[:-1:], query)
+
+    return search(unsorted_array[:-1:], query)
+
 
 # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+
 
 # is_palindrome? 👯‍♀️
 def is_palindrome(text):
     if len(text) <= 1:
         return True
+
     if text[0] == text[-1]:
         return is_palindrome(text[1:-1])
     else:
         return False
+
 print(is_palindrome("rats live on no evil star"))
 
+
 # or also 👯‍♀️💡:
-def is_palindrome_no_slice(text, first, last): # helper 🦄
+def is_palindrome_no_slice(text, first, last):  # helper 🦄
     if (first >= last):
         return True
-    
+
     if (text[first] == text[last]):
         return is_palindrome_no_slice(text, first+1, last-1)
     else:
         return False
 
+
+# is_palindrome 👯‍♀️:
 def is_palindrome_two(text):
     return is_palindrome_no_slice(text, 0, len(text)-1)
 
 print(is_palindrome_two("rats live on no evil star"))
 
+
 # 〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+
 
 # digit_match ✅
 def digit_match(num1, num2):
@@ -46,7 +57,7 @@ def digit_match(num1, num2):
         return digi_matcher(num1, num2)
 
 
-def digi_matcher(num1, num2): # helper 🦄
+def digi_matcher(num1, num2):  # helper 🦄
     if (num1 == 0 or num2 == 0):
         return 0
 
