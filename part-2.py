@@ -60,5 +60,13 @@ oranges = 62530841
 print(digit_match(apples, oranges))
 # Output: 
 
-print()
-# Output:
+apples = 0
+oranges = 62530841
+print(digit_match(apples, oranges))
+# Output:0
+
+
+apples = 0
+oranges = 0
+print(digit_match(apples, oranges))
+# Output: 1
