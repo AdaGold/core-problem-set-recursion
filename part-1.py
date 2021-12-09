@@ -36,7 +36,6 @@ def bunny(count):
 
 # is_nested_parens
 def is_nested_parens(parens):
-
     if parens == "":
         return True
 
@@ -45,6 +44,8 @@ def is_nested_parens(parens):
         return False
     else:
         parens[0] == "(" and parens[-1] == ")"
+        # drop first and last element
+        # side effects of this?
         parens = parens[1:-1]
         return is_nested_parens(parens)
 
