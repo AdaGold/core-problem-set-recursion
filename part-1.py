@@ -21,12 +21,21 @@ def reverse(text):
     return reverse(text[1:]) + text[0]
 
 # print(reverse("cat"))
+# output: "tac"
 
 # bunny
-# count = [1,2,3,4]
-# def bunny(count):
-#     pass
 
+def bunny(count):
+    if type(count) != int:
+        raise TypeError
+    if count == 0:
+        return 0
+    elif count == 1:
+        return 2
+    return 2 + bunny(count-1)
+
+# print(bunny(50))
+# output: 100
 
 # is_nested_parens
 
