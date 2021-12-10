@@ -23,7 +23,7 @@ def reverse(text):
 def bunny(count):
     if count == 1:
         return 2
-    elif count == 0:
+    if count == 0:
         return 0
 
     return bunny(count-1) + 2
