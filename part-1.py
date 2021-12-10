@@ -18,8 +18,8 @@ def factorial(n):
 def reverse(text):
     # base case
     if len(text) <= 1:
-      return text
-  
+        return text
+
     return text[-1] + reverse(text[:-1])
 
 
@@ -28,8 +28,8 @@ def reverse(text):
 def bunny(count):
     # base case
     if count == 0:
-      return 0
-    
+        return 0
+
     return 2 + bunny(count - 1)
 
 
@@ -38,7 +38,7 @@ def is_nested_parens(parens):
     #base case
     if len(parens) == 0:
         return True
-    
+
     if parens[0] == '(' and parens[-1] == ')':
         return is_nested_parens(parens[1:-1]) 
     else:
