@@ -29,8 +29,28 @@ def is_palindrome(text):
     else:
         return False
 
+# is_palindrome extra challenge
+
+
+def palindrome_helper(str, left, right):
+    if left >= right:
+        return True
+    elif not str[left].isalnum():
+        return palindrome_helper(str, left+1, right)
+    elif not str[right].isalnum():
+        return palindrome_helper(str, left, right-1)
+    elif str[left].lower() == str[right].lower():
+        return palindrome_helper(str, left+1, right-1)
+    else:
+        return False
+
+
+def is_palindrome2(text):
+    return palindrome_helper(text, 0, len(text)-1)
 
 # digit_match
+
+
 def digit_match(int1, int2):
     if int1 == 0 and int2 == 0:
         return 1
