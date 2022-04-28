@@ -34,3 +34,18 @@ def is_nested_parens(parens):
         return True
     else:
         return False
+
+# is_nested_parens extra challenge
+
+
+def parens_helper(str, left, right):
+    if left >= right:
+        return True
+    elif str[left] == "(" and str[right] == ")":
+        return parens_helper(str, left+1, right-1)
+    else:
+        return False
+
+
+def is_nested_parens2(parens):
+    return parens_helper(parens, 0, len(parens)-1)
