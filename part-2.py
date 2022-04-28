@@ -20,7 +20,11 @@ def search(array, query):
 def is_palindrome(text):
     if len(text) <= 1:
         return True
-    elif text[0] == text[-1] and is_palindrome(text[1:-1]):
+    elif not text[0].isalnum():
+        return is_palindrome(text[1:])
+    elif not text[-1].isalnum():
+        return is_palindrome(text[:-1])
+    elif text[0].lower() == text[-1].lower() and is_palindrome(text[1:-1]):
         return True
     else:
         return False
