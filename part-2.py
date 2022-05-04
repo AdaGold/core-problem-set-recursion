@@ -26,7 +26,6 @@ def is_palindrome(text):
 def is_palindrome(text):
     if len(text) <= 1:
         return True
-    
     if text[0] == text[-1]:
         return is_palindrome(text[1:-1])
     else:
@@ -35,7 +34,6 @@ def is_palindrome(text):
 
 # digit_match
 def digit_match(num1, num2):
-    
     count = 0
     digit1 = num1 % 10
     digit2 = num2 % 10
