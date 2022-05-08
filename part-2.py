@@ -26,4 +26,13 @@ def is_palindrome(text):
 
 # digit_match
 def digit_match(n1, n2):
+    if n1 < 10 or n2 < 10:
+        if n1 % 10 == n2 % 10:
+            return 1
+        else:
+            return 0
+    elif n1 % 10 == n2 % 10:
+        return 1 + digit_match((n1 // 10), (n2 // 10))
+    else:
+        return digit_match((n1 // 10), (n2 // 10))
     
