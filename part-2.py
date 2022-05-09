@@ -24,10 +24,6 @@ def is_palindrome(text):
 # digit_match
 def digit_match(num1, num2):
     if num1 <= 9 or num2 <= 9:
-        if (num1 % 10) == (num2 % 10):
-            return 1
-        else:
-            return 0
-            
-    return ((num1 % 10) == (num2 % 10)) + digit_match(num1//10, num2//10)
+        return int((num1 % 10) == (num2 % 10))       
+    return ((num1 % 10) == (num2 % 10)) + digit_match(num1//10, num2//10) 
 
