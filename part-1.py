@@ -41,7 +41,5 @@ def is_nested_parens(parens):
         return True
     if parens[0] == parens[-1]:
         return False
-    parens = parens[1:]
-    parens = parens[:-1]
     
-    return is_nested_parens(parens)
+    return is_nested_parens(parens[1:-1])
