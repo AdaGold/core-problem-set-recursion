@@ -45,8 +45,8 @@ def is_nested_parens(parens):
     """Returning True if those parentheses are properly nested, otherwise return False."""
     if parens == "":
         return True
-    elif parens[0] == "(" and parens[-1] == ")":
-        return is_nested_parens(parens[1:-1])
-    return False
+    elif parens[0] == parens[-1]:
+        return False
+    return is_nested_parens(parens[1:-1])
 
 
