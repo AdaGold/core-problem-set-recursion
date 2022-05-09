@@ -23,7 +23,7 @@ def is_palindrome(text):
 
 # digit_match
 def digit_match(num1, num2):
-    if num1 < 9 or num2 < 9:
+    if num1 <= 9 or num2 <= 9:
         if (num1 % 10) == (num2 % 10):
             return 1
         else:
