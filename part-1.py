@@ -31,7 +31,9 @@ def bunny(count):
 def is_nested_parens(parens):
     if parens == "":
         return True
-    elif len(parens) <= 2 and parens != "()":
+    #elif len(parens) <= 2 and parens != "()":
+    #    return False # isn't checking as it goes through the string, only checks when the string is at its "end"
+    elif parens[0] != "(" or parens[-1] != ")":
         return False
     return is_nested_parens(parens[1:-1])
 
