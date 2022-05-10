@@ -59,15 +59,29 @@ def digit_match(apples, oranges):
     
     
 #first approach -> not very recursive solution, but the logic is there
-def digit_match_non_working(apples, oranges):
-    a_index, o_index, match_pair = 0, 0, 0 #reinitialize index and match pair
+# def digit_match_non_working(apples, oranges):
+#     a_index, o_index, match_pair = 0, 0, 0 #reinitialize index and match pair
+#     if len(str(apples)) < 1 or len(str(oranges)) < 1:
+#         return 0
+#     list1, list2 = str(apples), str(oranges)
+#     #less recursive way
+#     if list1[-1] == list2[-1] and a_index == o_index: 
+#         match_pair += 1
+#         a_index += 1
+#         o_index += 1
+    
+#     return match_pair + digit_match(list1[:-1], list2[:-1])
+
+#update after today's class solution sharing
+def digit_match(apples, oranges):
+    match_pair = 0
+    #apples_list, oranges_list = list(reversed(stž(apples))), list(reversed(str(oranges)))
     if len(str(apples)) < 1 or len(str(oranges)) < 1:
         return 0
     list1, list2 = str(apples), str(oranges)
-    #less recursive way
-    if list1[-1] == list2[-1] and a_index == o_index: 
+    if list1[-1] == list2[-1]:
         match_pair += 1
-        a_index += 1
-        o_index += 1
     
     return match_pair + digit_match(list1[:-1], list2[:-1])
+
+print(digit_match(1072503891, 62530841))
