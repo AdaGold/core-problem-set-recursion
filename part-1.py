@@ -4,17 +4,34 @@
 # the appropriate comment.
 
 # factorial
+def factorial(n): 
+    if n <0:
+        raise ValueError
 
+    if n == 0 or n == 1:
+        return 1
+    return n*factorial(n-1)
 
 
 # reverse
-
+def reverse(text):
+    if len(text) == 0:
+        return ''
+    elif len(text) == 1:
+        return text
+    return reverse(text[1:])+text[0]
 
 
 # bunny
-
+def bunny(count):
+    if count == 0:
+        return 0
+    return bunny(count-1) + 2
 
 
 # is_nested_parens
-
+def bunny(count):
+    if count == 0:
+        return 0
+    return bunny(count-1) + 2
 
