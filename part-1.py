@@ -11,6 +11,17 @@ def factorial(n):
         return 1
     return n * factorial(n - 1)
 
+# factorial w/ tail recursion
+def factorial_tail_recursion(n):
+    if n < 0:
+        raise ValueError("The number must be positive.")
+    return factorial_tail_recursion_helper(1, n)
+
+def factorial_tail_recursion_helper(so_far, n):
+    if n == 0:
+        return so_far
+    return factorial_tail_recursion_helper(so_far * n, n - 1)
+
 # reverse
 def reverse(string):
     s_list = list(string)
@@ -29,11 +40,21 @@ def bunny(count):
     if count == 0:
         return 0
     return 2 + bunny(count - 1)
+    
+# bunny w/ tail recursion
+def bunny_tail_recursion(count):
+    return bunny_tail_recursion_helper(0, count)
+
+def bunny_tail_recursion_helper(so_far, count):
+    if count == 0:
+        return so_far
+    return bunny_tail_recursion_helper(so_far + 2, count - 1)
 
 # is_nested_parens
 def is_nested_parens(parens):
     if len(parens) == 0:
         return True
-    if len(parens) == 1:
+    elif parens[0] != '(' or parens[-1] != ')':
         return False
-    return parens[0] == '(' and parens[-1] == ')' and is_nested_parens(parens[1:-1])
+    else:
+        return is_nested_parens(parens[1:-1])
