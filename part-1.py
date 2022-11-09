@@ -21,7 +21,11 @@ def reverse(text):
 
 
 # bunny
+def bunny(count):
+    if count == 0:
+        return 0
 
+    return bunny(count-1) + 2
 
 
 # is_nested_parens
