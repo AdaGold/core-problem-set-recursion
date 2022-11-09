@@ -14,7 +14,7 @@ def factorial(num):
 
 # reverse
 def reverse(text):
-    if len(text) == 0:
+    if len(text) <= 1:
         return text
 
     return reverse(text[1:]) + text[0]
@@ -29,5 +29,11 @@ def bunny(count):
 
 
 # is_nested_parens
-
+def is_nested_parens(parens):
+    if len(parens) == 0:
+        return True
+    elif parens[0] + parens[-1] != "()":
+        return False
+    else:
+        return is_nested_parens(parens[1:-1])
 
