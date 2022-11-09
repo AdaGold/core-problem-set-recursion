@@ -31,4 +31,14 @@ def bunny(count):
 
 # is_nested_parens
 
+def is_nested_parens(parens):    
+    beg =0
+    end =len(parens)-1   
 
+    return helper(parens, beg, end)          
+    
+def helper(parens, beg, end):
+    if beg>end:
+        return True
+    dict_parens={"(":")","{":"}","[":"]"}
+    return parens[beg] in dict_parens and parens[end]==dict_parens[parens[beg]] and helper(parens, beg+1, end-1)
