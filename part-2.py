@@ -4,13 +4,37 @@
 # the appropriate comment.
 
 # search
-
+def search(array, query):
+    if array == []:
+        return False
+    if query == array.pop():
+        return True
+    
+    return search(array[:-1], query)
 
 
 # is_palindrome
-
+def is_palindrome(text):
+  
+    if len(text) <= 1:
+        return True
+    elif text[:1] != text[-1]:
+        return False
+    else:
+        return is_palindrome(text[1:-1])
 
 
 # digit_match
+def digit_match(first, second):
+    if first == second == 0:
+        return 1
+    elif first % 10 == second % 10 and first < 10:
+        return 1
+    elif first % 10 != second % 10 and first < 10 or second < 10:
+        return 0
 
+    if first % 10 == second % 10:
+        return digit_match(first // 10, second // 10) + 1
+    else:
+        return digit_match(first // 10, second // 10)
 
