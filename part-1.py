@@ -14,11 +14,19 @@ def factorial(n):
 
 
 # reverse
-
+def reverse(text):
+    if text == "":
+        return text
+    else:
+        return text[-1] + reverse(text[:-1])
 
 
 # bunny
-
+def bunny(count):
+    if count == 0 :
+        return 0
+    else:
+        return 2 + bunny((count-1))
 
 
 # is_nested_parens
