@@ -30,15 +30,16 @@ def bunny(count):
 
 
 # is_nested_parens
-
-def is_nested_parens(parens):    
-    beg =0
-    end =len(parens)-1   
-
-    return helper(parens, beg, end)          
+def is_nested_parens(parens):
+    '''
+    Here we looked for any '()' and then replace with an empty "", and continue to replace more until there is anothing
     
-def helper(parens, beg, end):
-    if beg>end:
+    '''
+    if len(parens) == 0:
         return True
-    dict_parens={"(":")","{":"}","[":"]"}
-    return parens[beg] in dict_parens and parens[end]==dict_parens[parens[beg]] and helper(parens, beg+1, end-1)
+    
+    elif "()" not in parens:
+        return False
+    
+    else:
+        return is_nested_parens(parens.replace("()", ""))
