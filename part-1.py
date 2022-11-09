@@ -37,11 +37,23 @@ def is_nested_parens(parens):
     if not parens:
         return True
 
-    if parens[0] == '(' and parens[-1] == ')':
+    if parens[0:2] == '()':
+        parens = parens[2:]
+    elif parens[0] == '(' and parens[-1] == ')':
         parens = parens[1:-1]
     else:
         return False
             
         
     return is_nested_parens(parens)
+
+parens_ex1 = '((((()()()))))'
+parens_ex2 = '(((()(()))))'
+parens_ex3 = '((()))'
+parens_ex4 = '(())))'
+
+assert is_nested_parens(parens_ex1)
+assert is_nested_parens(parens_ex2)
+assert is_nested_parens(parens_ex3) 
+assert is_nested_parens(parens_ex4) == False
 
