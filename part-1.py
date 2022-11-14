@@ -36,13 +36,11 @@ def bunny(n):
 
 
 # is_nested_parens
-# does not work yet
 def is_nested_parens(parens):
     if parens == "":
         return True
-    elif len(parens) == 1:
+    elif parens[0] == parens[-1]:
         return False
     else:
         return is_nested_parens(parens[1:-1])
-
 
