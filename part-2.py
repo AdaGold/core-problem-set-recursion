@@ -15,14 +15,11 @@ def search(array, query):
 # is_palindrome
 
 def is_palindrome(s):
-
-    # check for valid input'
-    if len(s) <= 1:
+# Return True if word is a palindrome, False if not
+    if len(word) <= 1:
         return True
-    elif s[:1] != s[-1:]:
-        return False
     else:
-      return is_palindrome(s[1:-1])
+        return word[0] == word[-1] and is_palindrome(word[1:-1])
 
 # digit_match
 
