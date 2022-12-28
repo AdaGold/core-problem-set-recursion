@@ -4,12 +4,25 @@
 # the appropriate comment.
 
 # search
-
+def search(array, query):
+    if not len(array):
+        return False
+    elif array[0] == query:
+        return True
+    return search(array[1:], query)
 
 
 # is_palindrome
 
+def is_palindrome(s):
 
+    # check for valid input'
+    if len(s) <= 1:
+        return True
+    elif s[:1] != s[-1:]:
+        return False
+    else:
+      return is_palindrome(s[1:-1])
 
 # digit_match
 
