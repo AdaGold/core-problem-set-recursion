@@ -5,16 +5,40 @@
 
 # factorial
 
-
+def factorial(n):
+    if n == 0:
+        return 1
+    elif n < 0:
+        raise ValueError('n is a negative number')
+    else:
+        return n * factorial(n-1)
 
 # reverse
 
-
+def reverse(text): 
+    if len(text) == 0: 
+        return text 
+    else: 
+        return reverse(text[1:]) + text[0] 
+  
 
 # bunny
 
+def bunny(count):
+  if count == 0:
+    return 0
+  else:
+    return (2 + bunny(count - 1))
 
 
 # is_nested_parens
+
+def is_nested_parens(parens):
+    if len(parens) == 0:
+        return True
+    elif parens[:1] != "(" or parens[-1:] != ")":
+        return False
+    else:
+        return is_nested_parens(parens[1:-1])
 
 
