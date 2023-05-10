@@ -25,5 +25,30 @@ def is_palindrome(text):
 
 
 # digit_match
+def digit_match(int1, int2, count=0):
+    if int1 < 10 and int2 < 10:
+        if int1 == int2:
+            count += 1
+            return count
+        else:
+            return count
+    elif int1 < 10 and int2 >= 10:
+        if int1 == int2 % 10:
+            count += 1
+            return count
+        else:
+            return count
+    elif int1 >= 10 and int2 < 10: 
+        if int1 % 10 == int2:
+            count += 1
+            return count
+        else:
+            return count
+            
+    if int1 % 10 == int2 % 10:
+        return digit_match(int1//10, int2//10, count+1)
+    else:
+        return digit_match(int1//10, int2//10, count)
+    
 
 
